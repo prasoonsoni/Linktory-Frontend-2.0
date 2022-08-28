@@ -41,7 +41,7 @@ const LoginModal = (props) => {
                 bg='blackAlpha.300'
                 backdropFilter='blur(10px)' />
             <ModalContent>
-                <ModalHeader>Login to your account</ModalHeader>
+                <ModalHeader>Create your account</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody pb={6}>
                     <FormControl mt={4}>

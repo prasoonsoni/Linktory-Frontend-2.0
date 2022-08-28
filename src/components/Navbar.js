@@ -6,11 +6,14 @@ import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody,
 import logo from '../img/logo.png'
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal"
+import NavDrawer from "./NavDrawer";
 
 const Navbar = () => {
   const toast = useToast()
   const { isOpen: loginIsOpen, onOpen: loginOnOpen, onClose: loginOnClose } = useDisclosure();
   const { isOpen: registerIsOpen, onOpen: registerOnOpen, onClose: registerOnClose } = useDisclosure();
+  const { isOpen: drawerIsOpen, onOpen: drawerOnOpen, onClose: drawerOnClose } = useDisclosure();
+  const btnRef = React.useRef();
   let navigate = useNavigate();
 
 
@@ -32,7 +35,8 @@ const Navbar = () => {
                 Sign Up
               </Button>
             </HStack>
-            <IconButton size="md" icon={<HamburgerIcon />} display={{ md: "none" }} aria-label={"Toggle menu"} />
+            <IconButton ref={btnRef} onClick={drawerOnOpen} size="md" icon={<HamburgerIcon />} display={{ md: "none" }} aria-label={"Toggle menu"} />
+            <NavDrawer isOpen={drawerIsOpen} onOpen={drawerOnOpen} onClose={drawerOnClose} btnRef={btnRef} />
           </HStack>
         </Flex>
       </Container>
