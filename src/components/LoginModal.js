@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Button, FormControl, FormLabel, Input, InputGroup, useToast } from "@chakra-ui/react";
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, InputRightElement } from '@chakra-ui/react'
+import { useNavigate } from "react-router-dom";
 const BASE_URL = process.env.REACT_APP_BASE_URL
 
 const LoginModal = (props) => {
@@ -11,6 +12,7 @@ const LoginModal = (props) => {
     const [password, setPassword] = useState("")
     const [show, setShow] = useState(false)
     const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
 
     const handleOnClick = async () => {
         if (email.trim().length === 0 || password.trim().length === 0) {
@@ -29,6 +31,7 @@ const LoginModal = (props) => {
         if (json.success) {
             toast({ title: "Logged In Successfully!!", variant: "left-accent", status: "success", duration: 2000 })
             sessionStorage.setItem("token", json.authtoken);
+            navigate("/dashboard")
         } else {
             toast({ title: json.message, variant: "left-accent", status: "error", duration: 2000 })
         }
