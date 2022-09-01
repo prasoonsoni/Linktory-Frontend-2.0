@@ -1,16 +1,80 @@
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import {
+    Stack,
+    Input,
+    Heading,
+    FormControl,
+    FormLabel,
+    Text,
+    Button,
+    useToast,
+    InputRightElement,
+    InputGroup,
+    toast, Link
+} from "@chakra-ui/react";
+import { Textarea } from '@chakra-ui/react'
+import Sidebar from "./Sidebar";
+import Card from "./Card";
+import { Select } from '@chakra-ui/react'
+import { useNavigate } from "react-router-dom";
+import LinkCard from "./LinkCard";
+
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+const URL = process.env.REACT_APP_URL;
 
 const Dashboard = () => {
     const navigate = useNavigate()
+    const toast = useToast();
+    const [username, setUsername] = useState("")
+    const [links, setLinks] = useState([])
     useEffect(() => {
-        if (!sessionStorage.getItem("token")) {
-            navigate("/")
+        if (!sessionStorage.getItem('token')) {
+            navigate('/')
         }
-    })
-    return (
-        <div>Dashboard</div>
-    )
-}
+        console.log(`${BASE_URL}/api/links/getlinks`)
+        console.log(sessionStorage.getItem("token"))
 
-export default Dashboard
+        const getLinks = async () => {
+            const response = await fetch(`${BASE_URL}/api/links/getlinks`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "auth-token": sessionStorage.getItem("token"),
+                },
+            });
+            const json = await response.json();
+            if (json.success) {
+                setLinks(json.links);
+                setUsername(json.username);
+            } else {
+                console.log(json.message)
+                setLinks([])
+            }
+        }
+        getLinks();
+    },[])
+
+
+
+    return (
+        <>
+            <Sidebar>
+                <Stack p={4} gap={3} >
+                    <Card >
+                        <Stack gap={3}>
+                            <Heading>Welcome to Your Dashboard.</Heading>
+                            <Link color="blue" fontSize={{ base: "sm", md: "md", lg: "xl" }} href={URL + "/" + username} isExternal >{URL + "/" + username}</Link>
+                        </Stack>
+                    </Card>
+                    <LinkCard/>
+                    <LinkCard/>
+                    <LinkCard/>
+                    <LinkCard/>
+                    <LinkCard/>
+                </Stack>
+            </Sidebar>
+        </>
+    );
+};
+
+export default Dashboard;
