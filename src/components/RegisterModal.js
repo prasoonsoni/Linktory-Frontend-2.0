@@ -3,7 +3,7 @@ import { Button, FormControl, FormLabel, Input, InputGroup, useToast } from "@ch
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, InputRightElement } from '@chakra-ui/react'
 const BASE_URL = process.env.REACT_APP_BASE_URL
 
-const LoginModal = (props) => {
+const RegisterModal = (props) => {
     const toast = useToast()
     const initialRef = useRef(null)
     const finalRef = useRef(null)
@@ -79,4 +79,4 @@ const LoginModal = (props) => {
     )
 }
 
-export default LoginModal
+export default RegisterModal

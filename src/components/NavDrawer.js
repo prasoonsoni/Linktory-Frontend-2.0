@@ -2,15 +2,23 @@ import {
     Drawer,
     DrawerBody,
     DrawerFooter,
-    DrawerHeader,
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
+    VStack,
+    Button,
+    useDisclosure,
+    DrawerHeader,
+    Center
 } from '@chakra-ui/react'
-import { Center, Text, Link } from "@chakra-ui/react";
 import React from 'react'
-
+import LoginModal from './LoginModal'
+import RegisterModal from './RegisterModal'
+import logo from '../img/logo.png'
 const NavDrawer = (props) => {
+    const { isOpen: loginIsOpen, onOpen: loginOnOpen, onClose: loginOnClose } = useDisclosure()
+
+    const { isOpen: registerIsOpen, onOpen: registerOnOpen, onClose: registerOnClose } = useDisclosure()
     return (
         <>
             <Drawer
@@ -19,15 +27,28 @@ const NavDrawer = (props) => {
                 onClose={props.onClose}
                 finalFocusRef={props.btnRef}>
                 <DrawerOverlay />
+                <LoginModal isOpen={loginIsOpen} onOpen={loginOnOpen} onClose={loginOnClose} />
+                <RegisterModal isOpen={registerIsOpen} onOpen={registerOnOpen} onClose={registerOnClose} />
                 <DrawerContent>
+                    <DrawerHeader>
+                        Linktory
+                    </DrawerHeader>
                     <DrawerCloseButton />
-                    <DrawerHeader>Create your account</DrawerHeader>
-
                     <DrawerBody>
-                        {/* <Input placeholder='Type here...' /> */}
+                        <VStack spacing={2} display={{ base: "flex", md: "none" }} width="100%">
+                            <Button colorScheme="blue" p={4} onClick={loginOnOpen} width="100%" opacity="0.5">
+                                Sign In
+                            </Button>
+                            <Button colorScheme="blue" p={4} onClick={registerOnOpen} width="100%" opacity="0.5">
+                                Sign Up
+                            </Button>
+                        </VStack>
                     </DrawerBody>
 
                     <DrawerFooter>
+                        <Center>
+                            © Copyright Prasoon Soni
+                        </Center>
                     </DrawerFooter>
                 </DrawerContent>
             </Drawer>
