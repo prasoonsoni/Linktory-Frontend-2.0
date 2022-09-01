@@ -69,7 +69,7 @@ const LoginModal = (props) => {
                     </FormControl>
                 </ModalBody>
                 <ModalFooter>
-                    <Button onClick={handleOnClick} colorScheme='blue' mr={3} isLoading={loading} loadingText="Signing In">
+                    <Button onClick={handleOnClick} colorScheme='blue' mr={3} isLoading={loading} loadingText="Signing Up">
                         Sign Up
                     </Button>
                     <Button onClick={props.onClose}>Cancel</Button>
