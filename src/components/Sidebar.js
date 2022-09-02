@@ -65,7 +65,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
     }
     getLinks();
   }, [links]);
-  
+
   return (
     <Box bg="blue.50" w={{ base: "full", md: "25%" }} pos="fixed" h="full" {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="center">
@@ -82,6 +82,8 @@ const SidebarContent = ({ onClose, ...rest }) => {
         {loading && <><Skeleton height='40px' width="80%" border="50px" />
           <Skeleton height='40px' width="80%" border="50px" />
           <Skeleton height='40px' width="80%" border="50px" /></>}
+        {!loading && links.length === 0 &&
+          <Text>No links found.</Text>}
         {links.map((link) => (
           <LinkItem key={link._id} url={link.link} name={link.name} />
         ))}

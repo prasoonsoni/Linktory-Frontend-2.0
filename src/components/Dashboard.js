@@ -132,6 +132,9 @@ const Dashboard = () => {
                             </VStack>
                         </Stack>
                     </Card>
+                    {links.length === 0 && <Card>
+                        <Text>No links found.</Text>
+                    </Card>}
                     {links.map((link) => (
                         <LinkCard key={link._id} link={link.link} name={link.name} id={link._id} />
                     ))}
