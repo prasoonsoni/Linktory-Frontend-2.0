@@ -52,10 +52,7 @@ const Dashboard = () => {
             }
         }
         getLinks();
-    },[])
-
-
-
+    },[links])
     return (
         <>
             <Sidebar>
@@ -66,11 +63,9 @@ const Dashboard = () => {
                             <Link color="blue" fontSize={{ base: "sm", md: "md", lg: "xl" }} href={URL + "/" + username} isExternal >{URL + "/" + username}</Link>
                         </Stack>
                     </Card>
-                    <LinkCard/>
-                    <LinkCard/>
-                    <LinkCard/>
-                    <LinkCard/>
-                    <LinkCard/>
+                    {links.map((link) => (
+                        <LinkCard key = {link._id} link = {link.link} name = {link.name} id={link._id}/>
+                    ))}
                 </Stack>
             </Sidebar>
         </>

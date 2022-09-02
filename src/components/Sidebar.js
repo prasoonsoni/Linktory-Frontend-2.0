@@ -55,7 +55,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       </Flex >
       <VStack mt={8}>
         {links.map((link) => (
-          <LinkItem key = {link.id} url = {link.url} name = {link.name} />
+          <LinkItem key = {link._id} url = {link.link} name = {link.name} />
         ))}
       </VStack>
 
