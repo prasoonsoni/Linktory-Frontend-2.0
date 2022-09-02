@@ -77,7 +77,7 @@ const LinkCard = (props) => {
                             Are you sure? You can't undo this action afterwards.
                         </AlertDialogBody>
                         <AlertDialogFooter>
-                            <Button leftIcon={<CloseIcon />} ref={cancelRef} onClick={onClose} variant="outline">
+                            <Button leftIcon={<CloseIcon />} ref={cancelRef} onClick={onClose} variant="outline" colorScheme="blue">
                                 Cancel
                             </Button>
                             <Button isLoading={deleteLoading} loadingText="Deleting" leftIcon={<DeleteIcon />} colorScheme='red' ml={3} variant="outline" onClick={handleOnDelete}>
