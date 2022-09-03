@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Box, VStack, Input, Flex, Button, HStack } from "@chakra-ui/react";
+import { Box, VStack, Input, Flex, Button, HStack, Heading } from "@chakra-ui/react";
 import { DeleteIcon, EditIcon, CloseIcon, CheckIcon } from '@chakra-ui/icons'
 import {
     AlertDialog,
@@ -9,7 +9,9 @@ import {
     AlertDialogContent,
     AlertDialogOverlay,
     useDisclosure,
-    useToast
+    useToast,
+    Text,
+    Divider
 } from '@chakra-ui/react'
 const BASE_URL = process.env.REACT_APP_BASE_URL
 const LinkCard = (props) => {
@@ -89,6 +91,7 @@ const LinkCard = (props) => {
             </AlertDialog>
             <Box bg="white" w="full" p={8} borderRadius="md">
                 <VStack align="left">
+                    <Text fontSize="xl">Link {props.index}</Text>
                     <Input value={name} onChange={(e) => setName(e.target.value)} disabled={!edit} />
                     <Input value={link} onChange={(e) => setLink(e.target.value)} disabled={!edit} />
                     {!edit && <HStack>

@@ -24,6 +24,7 @@ import {
     PopoverArrow,
     PopoverCloseButton,
     PopoverAnchor,
+    Skeleton
 } from '@chakra-ui/react'
 import { AddIcon, DeleteIcon, EditIcon, CloseIcon, CheckIcon } from '@chakra-ui/icons'
 import { Textarea } from '@chakra-ui/react'
@@ -43,6 +44,8 @@ const Dashboard = () => {
     const [name, setName] = useState("")
     const [link, setLink] = useState("")
     const [addLoading, setAddLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
+
     useEffect(() => {
         if (!sessionStorage.getItem('token')) {
             navigate('/')
@@ -63,6 +66,8 @@ const Dashboard = () => {
                 console.log(json.message)
                 setLinks([])
             }
+
+            setLoading(false)
         }
         getLinks();
     })
@@ -83,7 +88,7 @@ const Dashboard = () => {
         const json = await response.json();
         if (json.success) {
             setLink("")
-            setLink("")
+            setName("")
 
             toast({ title: json.message, variant: "left-accent", status: "success", duration: 2000 })
         } else {
@@ -132,11 +137,22 @@ const Dashboard = () => {
                             </VStack>
                         </Stack>
                     </Card>
-                    {links.length === 0 && <Card>
+                    {loading && <Card>
+                        <Stack gap={3}>
+                            <Skeleton height='40px' width={{ base: "40%", md: "10%" }} border="50px" />
+                            <Skeleton height='45px' width="100%" border="50px" />
+                            <Skeleton height='45px' width="100%" border="50px" />
+                            <HStack>
+                                <Skeleton height='45px' width={{ base: "40%", md: "10%" }} border="50px" />
+                                <Skeleton height='45px' width={{ base: "40%", md: "10%" }} border="50px" />
+                            </HStack>
+                        </Stack>
+                    </Card>}
+                    {!loading && links.length === 0 && <Card>
                         <Text>No links found.</Text>
                     </Card>}
-                    {links.map((link) => (
-                        <LinkCard key={link._id} link={link.link} name={link.name} id={link._id} />
+                    {links.map((link, index) => (
+                        <LinkCard index={index + 1} key={link._id} link={link.link} name={link.name} id={link._id} />
                     ))}
                 </Stack>
             </Sidebar>
