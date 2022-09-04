@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { UnlockIcon } from '@chakra-ui/icons'
 import { Stack, Input, Heading, Text, Button, useToast, Link, VStack, HStack, Avatar, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverCloseButton, Skeleton } from "@chakra-ui/react";
-import { AddIcon, CloseIcon } from '@chakra-ui/icons'
+import { AddIcon, CloseIcon, UnlockIcon, ExternalLinkIcon, CopyIcon } from '@chakra-ui/icons'
 import Sidebar from "../components/Dashboard/Sidebar";
 import Card from "../components/Dashboard/Card";
 import { useNavigate } from "react-router-dom";
@@ -76,6 +75,10 @@ const Dashboard = () => {
         navigate('/')
         toast({ title: "Logged out successfully", variant: "left-accent", status: "success", duration: 2000 })
     }
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(`${URL}/${username}`)
+        toast({ title: "Copied to clipboard", variant: "left-accent", status: "success", duration: 2000 })
+    }
     return (
         <>
             <SEO title="Dashboard" />
@@ -85,7 +88,11 @@ const Dashboard = () => {
                         <HStack>
                             <VStack align="left" w="100%">
                                 <Heading w="100%">Welcome to your Dashboard.</Heading>
-                                <Link w="fit-content" color="blue" fontSize={{ base: "sm", md: "md", lg: "xl" }} href={URL + "/" + username} isExternal >{URL + "/" + username}</Link>
+                                <HStack>
+                                    <Button as={Link} colorScheme="linkedin" variant="outline" leftIcon={<ExternalLinkIcon />} href={`${URL}/${username}`} fontSize={{base:"xs", md:"md"}}>Preview Link</Button>
+                                    <Button  colorScheme="linkedin" variant="outline" leftIcon={<CopyIcon />} onClick={copyToClipboard} fontSize={{base:"xs", md:"md"}}>Copy Link</Button>
+                                </HStack>
+                                {/* <Link w="fit-content" color="blue" fontSize={{ base: "sm", md: "md", lg: "xl" }} href={URL + "/" + username} isExternal >{URL + "/" + username}</Link> */}
                             </VStack>
                             <Popover>
                                 <PopoverTrigger>

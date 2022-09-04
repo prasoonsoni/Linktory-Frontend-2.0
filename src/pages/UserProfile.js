@@ -1,9 +1,14 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
+import SEO from '../components/SEO';
+import AllLinks from '../components/UserProfile/AllLinks';
 const UserProfile = () => {
     const { username } = useParams()
     return (
-        <div>{username}</div>
+        <>
+            <SEO title={username} />
+            <AllLinks username={username} />
+        </>
     )
 }
 
