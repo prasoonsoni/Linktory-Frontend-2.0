@@ -1,38 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { UnlockIcon } from '@chakra-ui/icons'
-import {
-    Stack,
-    Input,
-    Heading,
-    FormControl,
-    FormLabel,
-    Text,
-    Button,
-    useToast,
-    InputRightElement,
-    InputGroup,
-    toast, Link, VStack, HStack,
-    Avatar
-} from "@chakra-ui/react";
-import {
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
-    PopoverHeader,
-    PopoverBody,
-    PopoverFooter,
-    PopoverArrow,
-    PopoverCloseButton,
-    PopoverAnchor,
-    Skeleton
-} from '@chakra-ui/react'
-import { AddIcon, DeleteIcon, EditIcon, CloseIcon, CheckIcon } from '@chakra-ui/icons'
-import { Textarea } from '@chakra-ui/react'
-import Sidebar from "./Sidebar";
-import Card from "./Card";
-import { Select } from '@chakra-ui/react'
+import { Stack, Input, Heading, Text, Button, useToast, Link, VStack, HStack, Avatar, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverCloseButton, Skeleton } from "@chakra-ui/react";
+import { AddIcon, CloseIcon } from '@chakra-ui/icons'
+import Sidebar from "../components/Dashboard/Sidebar";
+import Card from "../components/Dashboard/Card";
 import { useNavigate } from "react-router-dom";
-import LinkCard from "./LinkCard";
+import LinkCard from "../components/Dashboard/LinkCard";
+import SEO from "../components/SEO";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const URL = process.env.REACT_APP_URL;
@@ -104,6 +78,7 @@ const Dashboard = () => {
     }
     return (
         <>
+            <SEO title="Dashboard" />
             <Sidebar>
                 <Stack p={4} gap={3} >
                     <Card>

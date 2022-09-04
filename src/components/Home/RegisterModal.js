@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { Button, FormControl, FormLabel, Input, InputGroup, useToast } from "@chakra-ui/react";
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, InputRightElement } from '@chakra-ui/react'
+import { Button, FormControl, FormLabel, Input, InputGroup, useToast, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, InputRightElement } from "@chakra-ui/react";
+
 const BASE_URL = process.env.REACT_APP_BASE_URL
 
 const RegisterModal = (props) => {

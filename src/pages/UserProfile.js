@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    useParams
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 const UserProfile = () => {
     const { username } = useParams()
     return (

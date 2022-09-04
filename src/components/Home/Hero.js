@@ -1,15 +1,6 @@
 import React, { useEffect } from "react";
-import {
-  Stack,
-  Heading,
-  Container,
-  Image,
-  Flex,
-  Box,
-  Text
-} from "@chakra-ui/react";
-
-import hero from '../img/hero.svg'
+import { Stack, Heading, Container, Image, Flex, Box, Text } from "@chakra-ui/react";
+import hero from '../../img/hero.svg'
 import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const navigate = useNavigate()

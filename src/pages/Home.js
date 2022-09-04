@@ -1,14 +1,16 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import Hero from '../components/Hero'
-import Navbar from '../components/Navbar'
+import Footer from '../components/Home/Footer'
+import Hero from '../components/Home/Hero'
+import Navbar from '../components/Home/Navbar'
+import SEO from '../components/SEO'
 
 const Home = () => {
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <Footer/>
+      <SEO title="Home" />
+      <Navbar />
+      <Hero />
+      <Footer />
     </>
   )
 }

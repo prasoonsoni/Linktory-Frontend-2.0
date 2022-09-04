@@ -1,39 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { UnlockIcon } from '@chakra-ui/icons'
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
-} from '@chakra-ui/react'
-import {
-  IconButton,
-  Box,
-  CloseButton,
-  Flex,
-  Icon,
-  Drawer,
-  DrawerContent,
-  useDisclosure,
-  Heading,
-  Button,
-  Text,
-  Link,
-  VStack,
-  Image,
-  Skeleton,
-  Avatar,
-  useToast
-} from "@chakra-ui/react";
-import { FaHome, FaAngleDoubleRight, FaCcVisa, FaKey } from "react-icons/fa";
-import logo from '../img/logo.png'
+import { UnlockIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { IconButton, Box, CloseButton, Flex, Drawer, DrawerContent, useDisclosure, Heading, Button, Text, Link, VStack, Image, Skeleton, Avatar, useToast, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverCloseButton } from '@chakra-ui/react'
+import logo from '../../img/logo.png'
 import LinkItem from './LinkItem'
-import { HamburgerIcon } from "@chakra-ui/icons";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const URL = process.env.REACT_APP_URL;

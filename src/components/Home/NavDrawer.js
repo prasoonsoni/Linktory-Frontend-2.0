@@ -1,23 +1,9 @@
-import {
-    Drawer,
-    DrawerBody,
-    DrawerFooter,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-    VStack,
-    Button,
-    useDisclosure,
-    DrawerHeader,
-    Center
-} from '@chakra-ui/react'
+import { Drawer, DrawerBody, DrawerFooter, DrawerOverlay, DrawerContent, DrawerCloseButton, VStack, Button, useDisclosure, DrawerHeader, Center } from '@chakra-ui/react'
 import React from 'react'
 import LoginModal from './LoginModal'
 import RegisterModal from './RegisterModal'
-import logo from '../img/logo.png'
 const NavDrawer = (props) => {
     const { isOpen: loginIsOpen, onOpen: loginOnOpen, onClose: loginOnClose } = useDisclosure()
-
     const { isOpen: registerIsOpen, onOpen: registerOnOpen, onClose: registerOnClose } = useDisclosure()
     return (
         <>

@@ -1,9 +1,8 @@
 import React from "react";
-import { Box, Flex, HStack, IconButton, useDisclosure, Button, Container, Heading, Link, VStack, FormControl, FormLabel, useToast, Input, InputGroup, UnorderedList } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { NavLink, useNavigate } from "react-router-dom";
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, InputRightElement } from '@chakra-ui/react'
-import logo from '../img/logo.png'
+import { Box, Flex, HStack, IconButton, useDisclosure, Button, Container, useToast } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { useNavigate } from "react-router-dom";
+import logo from '../../img/logo.png'
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal"
 import NavDrawer from "./NavDrawer";

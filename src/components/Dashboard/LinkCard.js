@@ -1,18 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Box, VStack, Input, Flex, Button, HStack, Heading } from "@chakra-ui/react";
+import React, { useState, useRef } from "react";
+import { Box, VStack, Input, Button, HStack } from "@chakra-ui/react";
 import { DeleteIcon, EditIcon, CloseIcon, CheckIcon } from '@chakra-ui/icons'
-import {
-    AlertDialog,
-    AlertDialogBody,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogContent,
-    AlertDialogOverlay,
-    useDisclosure,
-    useToast,
-    Text,
-    Divider
-} from '@chakra-ui/react'
+import { AlertDialog, AlertDialogBody, AlertDialogFooter, AlertDialogHeader, AlertDialogContent, AlertDialogOverlay, useDisclosure, useToast, Text, } from '@chakra-ui/react'
 const BASE_URL = process.env.REACT_APP_BASE_URL
 const LinkCard = (props) => {
     const [link, setLink] = useState(props.link);
@@ -23,7 +12,7 @@ const LinkCard = (props) => {
     const toast = useToast();
     const { isOpen, onOpen, onClose } = useDisclosure()
     const cancelRef = useRef()
-    
+
     const handleOnDelete = async () => {
         setDeleteLoading(true)
         const response = await fetch(`${BASE_URL}/api/links/deletelink/${props.id}`, {

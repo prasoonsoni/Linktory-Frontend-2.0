@@ -1,8 +1,8 @@
 import './App.css';
 import Home from './pages/Home';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from './components/Dashboard';
-import UserProfile from './components/UserProfile';
+import Dashboard from './pages/Dashboard';
+import UserProfile from './pages/UserProfile';
 function App() {
   return (
       <Router>
