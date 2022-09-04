@@ -40,7 +40,7 @@ const AllLinks = (props) => {
             </Flex >
             <Text fontSize="xl" mt={5}>{header}</Text>
             {loading && <Skeleton m={8} borderRadius="10px" height='40px' width="300px" border="50px" />}
-            {!loading && links.length !== 0 && <VStack w="300px" borderRadius="20px" pt={6} pb={6} backgroundColor="white">
+            {!loading && links.length !== 0 && <VStack w="400px" borderRadius="20px" pt={6} pb={6} backgroundColor="white">
                 {!loading && links.map((link) => (
                     <LinkItem key={link._id} url={link.link} name={link.name} />
                 ))}
