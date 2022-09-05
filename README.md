@@ -53,7 +53,13 @@ Linktory is a web app that serves as a landing page for a person or company's en
 * JavaScript
 
 <!-- SCREENSHOTS -->
-<!-- ## <img src="https://cdn-icons-png.flaticon.com/512/6823/6823853.png" width="32" height="32"> Screenshots -->
+## <img src="https://cdn-icons-png.flaticon.com/512/6823/6823853.png" width="32" height="32"> Screenshots
+![image](https://user-images.githubusercontent.com/75159757/188504010-b663c12d-ca32-4ee7-8290-f37900279c6e.png)
+![image](https://user-images.githubusercontent.com/75159757/188504037-708ff970-55a8-42c1-9984-409bccc11b68.png)
+![image](https://user-images.githubusercontent.com/75159757/188504054-2c7bcf69-09d7-4650-8847-bb3768b1ab7c.png)
+![image](https://user-images.githubusercontent.com/75159757/188504108-aa41da5c-b090-49f5-9db6-e3722c7b3c54.png)
+![image](https://user-images.githubusercontent.com/75159757/188504133-3ff28e74-d270-4f71-8ba0-e1dba9aba2ef.png)
+
 
 
 <!-- GETTING STARTED -->
