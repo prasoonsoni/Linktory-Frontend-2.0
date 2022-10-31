@@ -81,8 +81,8 @@ const LinkCard = (props) => {
             <Box bg="white" w="full" p={8} borderRadius="md">
                 <VStack align="left">
                     <Text fontSize="xl">Link {props.index}</Text>
-                    <Input value={name} onChange={(e) => setName(e.target.value)} disabled={!edit} />
-                    <Input value={link} onChange={(e) => setLink(e.target.value)} disabled={!edit} />
+                    <Input value={name} onChange={(e) => setName(e.target.value)} readOnly={!edit} />
+                    <Input value={link} onChange={(e) => setLink(e.target.value)} readOnly={!edit} />
                     {!edit && <HStack>
                         <Button leftIcon={<EditIcon />} colorScheme="green" variant="outline" onClick={() => setEdit(!edit)}>
                             Edit
