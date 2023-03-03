@@ -17,7 +17,7 @@ const Navbar = () => {
 
 
   return (
-    <Box px={4}>
+    <Box px={4} w="100%">
       <Container maxW="container.xl" py={4}>
         <LoginModal isOpen={loginIsOpen} onOpen={loginOnOpen} onClose={loginOnClose} />
         <RegisterModal isOpen={registerIsOpen} onOpen={registerOnOpen} onClose={registerOnClose} />

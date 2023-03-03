@@ -1,4 +1,4 @@
-import { Drawer, DrawerBody, DrawerFooter, DrawerOverlay, DrawerContent, DrawerCloseButton, VStack, Button, useDisclosure, DrawerHeader, Center } from '@chakra-ui/react'
+import { Link, Text, Drawer, DrawerBody, DrawerOverlay, DrawerContent, DrawerCloseButton, VStack, Button, useDisclosure, DrawerHeader, Center } from '@chakra-ui/react'
 import React from 'react'
 import LoginModal from './LoginModal'
 import RegisterModal from './RegisterModal'
@@ -30,12 +30,6 @@ const NavDrawer = (props) => {
                             </Button>
                         </VStack>
                     </DrawerBody>
-
-                    <DrawerFooter>
-                        <Center>
-                            © Copyright Prasoon Soni
-                        </Center>
-                    </DrawerFooter>
                 </DrawerContent>
             </Drawer>
         </>

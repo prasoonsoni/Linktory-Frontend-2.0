@@ -121,12 +121,12 @@ const Dashboard = () => {
                     </Card>
                     {loading && <Card>
                         <Stack gap={3}>
-                            <Skeleton height='40px' width={{ base: "40%", md: "10%" }} border="50px" />
-                            <Skeleton height='45px' width="100%" border="50px" />
-                            <Skeleton height='45px' width="100%" border="50px" />
+                            <Skeleton height='40px' width={{ base: "40%", md: "10%" }} borderRadius="8px" />
+                            <Skeleton height='45px' width="100%" borderRadius="8px" />
+                            <Skeleton height='45px' width="100%" borderRadius="8px" />
                             <HStack>
-                                <Skeleton height='45px' width={{ base: "40%", md: "10%" }} border="50px" />
-                                <Skeleton height='45px' width={{ base: "40%", md: "10%" }} border="50px" />
+                                <Skeleton height='45px' width={{ base: "40%", md: "10%" }} borderRadius="8px" />
+                                <Skeleton height='45px' width={{ base: "40%", md: "10%" }} borderRadius="8px" />
                             </HStack>
                         </Stack>
                     </Card>}

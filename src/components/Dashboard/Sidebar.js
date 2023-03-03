@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { UnlockIcon, HamburgerIcon } from '@chakra-ui/icons'
-import { IconButton, Box, CloseButton, Flex, Drawer, DrawerContent, useDisclosure, Heading, Button, Text, Link, VStack, Image, Skeleton, Avatar, useToast, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverCloseButton } from '@chakra-ui/react'
+import { Spacer, IconButton, Box, CloseButton, Flex, Drawer, DrawerContent, useDisclosure, Heading, Button, Text, Link, VStack, Image, Skeleton, Avatar, useToast, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverCloseButton } from '@chakra-ui/react'
 import logo from '../../img/logo.png'
 import LinkItem from './LinkItem'
 import { NavLink, useNavigate } from "react-router-dom";
@@ -36,7 +36,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
   }, [links]);
 
   return (
-    <Box bg="blue.50" w={{ base: "full", md: "25%" }} pos="fixed" h="full" {...rest}>
+    <Box bg="blue.50" w={{ base: "full", md: "25%" }} pos="fixed" h="100vh" {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="center">
         <Flex alignItems="center" gap={2}>
           <Link as={NavLink} to="/">
@@ -46,16 +46,18 @@ const SidebarContent = ({ onClose, ...rest }) => {
         </Flex>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex >
-      <VStack mt={8}>
-
-        {loading && <><Skeleton height='40px' width="80%" border="50px" />
-          <Skeleton height='40px' width="80%" border="50px" />
-          <Skeleton height='40px' width="80%" border="50px" /></>}
+      <VStack mt={8} p={5} pt={0} h="85vh">
+        {loading && <><Skeleton height='40px' width="100%" borderRadius="8px" />
+          <Skeleton height='40px' width="100%" borderRadius="8px" />
+          <Skeleton height='40px' width="100%" borderRadius="8px" /></>}
         {!loading && links.length === 0 &&
           <Text>No links found.</Text>}
         {links.map((link) => (
           <LinkItem key={link._id} url={link.link} name={link.name} />
         ))}
+        <Spacer />
+        <Text size="sm" color="gray">Copyright © {new Date().getFullYear()} <Link href="https://prasoon.codes" target='_blank'>Prasoon Soni</Link></Text>
+
       </VStack>
 
     </Box>
